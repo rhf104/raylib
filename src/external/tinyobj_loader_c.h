@@ -547,7 +547,7 @@ static void initMaterial(tinyobj_material_t *material) {
 #define HASH_TABLE_ERROR 1 
 #define HASH_TABLE_SUCCESS 0
 
-#define HASH_TABLE_DEFAULT_SIZE 10
+#define HASH_TABLE_DEFAULT_SIZE 73
 
 typedef struct hash_table_entry_t
 {

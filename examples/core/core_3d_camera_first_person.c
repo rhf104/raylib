@@ -11,7 +11,7 @@
 
 #include "raylib.h"
 
-#define MAX_COLUMNS 20
+#define NUM_WALLS 20
 
 int main(void)
 {
@@ -31,11 +31,11 @@ int main(void)
     camera.type = CAMERA_PERSPECTIVE;
 
     // Generates some random columns
-    float heights[MAX_COLUMNS] = { 0.0f };
-    Vector3 positions[MAX_COLUMNS] = { 0 };
-    Color colors[MAX_COLUMNS] = { 0 };
+    float heights[NUM_WALLS] = {0.0f };
+    Vector3 positions[NUM_WALLS] = {0 };
+    Color colors[NUM_WALLS] = {0 };
 
-    for (int i = 0; i < MAX_COLUMNS; i++)
+    for (int i = 0; i < NUM_WALLS; i++)
     {
         heights[i] = (float)GetRandomValue(1, 12);
         positions[i] = (Vector3){ GetRandomValue(-15, 15), heights[i]/2, GetRandomValue(-15, 15) };
@@ -69,7 +69,7 @@ int main(void)
                 DrawCube((Vector3){ 0.0f, 2.5f, 16.0f }, 32.0f, 5.0f, 1.0f, GOLD);      // Draw a yellow wall
 
                 // Draw some cubes around
-                for (int i = 0; i < MAX_COLUMNS; i++)
+                for (int i = 0; i < NUM_WALLS; i++)
                 {
                     DrawCube(positions[i], 2.0f, heights[i], 2.0f, colors[i]);
                     DrawCubeWires(positions[i], 2.0f, heights[i], 2.0f, MAROON);
